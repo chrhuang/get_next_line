@@ -6,7 +6,7 @@
 #    By: chrhuang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 16:04:32 by chrhuang          #+#    #+#              #
-#    Updated: 2018/11/19 14:04:07 by chrhuang         ###   ########.fr        #
+#    Updated: 2018/11/29 11:10:59 by chrhuang         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -85,7 +85,8 @@ SRCS	=	ft_memset.c			\
 			ft_putnbr_base.c	\
 			ft_swap.c			\
 			ft_atoi_base.c		\
-			ft_convert_base.c
+			ft_convert_base.c	\
+			ft_strjoin_free.c
 
 OBJS	=	$(SRCS:.c=.o)
 

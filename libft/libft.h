@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chrhuang <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: chrhuang <chrhuang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 11:09:06 by chrhuang          #+#    #+#             */
-/*   Updated: 2018/11/19 11:02:16 by chrhuang         ###   ########.fr       */
+/*   Updated: 2018/11/29 11:10:53 by chrhuang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+
+typedef struct	s_pos
+{
+	int			x;
+	int			y;
+}				t_pos;
 
 typedef struct	s_list
 {
@@ -64,7 +70,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int				ft_strequ(char const *s1, char const *s2);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
-char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin(const char *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(const char *str, char charset);
 char			*ft_itoa(int n);
@@ -92,4 +98,5 @@ void			ft_putnbr_base(int nbr, const char *base);
 void			ft_swap(int *a, int *b);
 int				ft_atoi_base(char *nb, char *base);
 char			*ft_convert_base(char *nbr, char *base_from, char *base_to);
+char			*ft_strjoin_free(char *s1, char *s2, t_pos pos);
 #endif
