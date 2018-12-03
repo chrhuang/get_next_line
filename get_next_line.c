@@ -6,7 +6,7 @@
 /*   By: chrhuang <chrhuang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 14:06:02 by chrhuang          #+#    #+#             */
-/*   Updated: 2018/11/29 14:12:18 by chrhuang         ###   ########.fr       */
+/*   Updated: 2018/12/03 11:34:59 by chrhuang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,20 @@ static int			check_line(t_list *curr, int len, char **line)
 {
 	unsigned int	end;
 	char			*tmp;
-	static int		i = 0;
 
-	i = i + 1;
 	end = search_end(curr->content);
 	if (len != BUFF_SIZE && ft_strlen(curr->content) == 0)
 		return (0);
-	*line = curr->content;
-	(*line)[end] = '\0';
 	if ((*line = ft_strdup(curr->content)) == NULL)
 		return (-1);
+	(*line)[end] = '\0';
 	tmp = curr->content;
-	if ((curr->content = ft_strdup(curr->content + end + 1)) == NULL)
+	if ((end == ft_strlen(curr->content) || end == ft_strlen(curr->content) - 1)
+		&& len == 0)
+		curr->content = ft_strdup("\0");
+	else
+		curr->content = ft_strdup(curr->content + end + 1);
+	if (curr->content == NULL)
 		return (-1);
 	ft_memdel((void **)&tmp);
 	return (1);
